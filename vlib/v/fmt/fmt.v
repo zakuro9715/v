@@ -264,8 +264,7 @@ pub fn (mut f Fmt) imports(imports []ast.Import) {
 
 	for imp in imports {
 		if imp.mod !in f.used_imports {
-			// TODO bring back once only unused imports are removed
-			// continue
+			continue
 		}
 		if imp.mod in f.auto_imports && imp.mod !in f.used_imports {
 			continue
